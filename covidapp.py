@@ -183,16 +183,19 @@ auth = dash_auth.BasicAuth(app,USERNAME_PASSWORD_PAIRS)
 server = app.server
 
                     # Dash with all traces
-app.layout = html.Div([dcc.Graph(id='bar',
-                                 figure = {'data':[trace1, trace2, trace3, trace4],
-                                 'layout': go.Layout(title='Covid19 Summary for Each Country',
-                                                     barmode='stack',
-                                                     xaxis= {'title': 'Country'},
-                                                     yaxis={'title': 'Case'})
-                                           }
-                                 )
-
-                       ])
+app.layout = html.Div(children=[html.H1(children='Covid19 Analysis by Country'),
+                                dcc.Graph(
+                                    id='bar',
+                                    figure = {
+                                        'data':[trace1, trace2, trace3, trace4],
+                                        'layout': go.Layout(title='Covid19 Summary for Each Country',
+                                                            barmode='stack',
+                                                            xaxis= {'title': 'Country'},
+                                                            yaxis={'title': 'Cases'}
+                                                            )
+                                    }
+                                )]
+                      )
 
 
 if __name__ == '__main__':
