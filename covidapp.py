@@ -189,7 +189,7 @@ app.layout = html.Div(children=[html.H1(children='Covid19 Analysis by Country'),
                                     figure = {
                                         'data':[trace1, trace2, trace3, trace4],
                                         'layout': go.Layout(title='Covid19 Summary for Each Country',
-                                                            barmode='stack',
+                                                            barmode='group',
                                                             xaxis= {'title': 'Country'},
                                                             yaxis={'title': 'Cases'}
                                                             )
